@@ -34,7 +34,6 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Resultado')),
       body: FutureBuilder<PhotoResult>(
         future: _future,
         builder: (context, snap) {
@@ -105,25 +104,22 @@ class _ResultBody extends StatelessWidget {
               ),
             ),
           ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Center(
-              child: AspectRatio(
-                aspectRatio: analysis.photoWidth / analysis.photoHeight,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Image.memory(result.roiJpeg, fit: BoxFit.fill, gaplessPlayback: true),
-                    CustomPaint(painter: PhotoOverlayPainter(analysis)),
-                  ],
-                ),
+                Expanded(
+          child: Center(
+            child: AspectRatio(
+              aspectRatio: analysis.photoWidth / analysis.photoHeight,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.memory(result.roiJpeg, fit: BoxFit.fill, gaplessPlayback: true),
+                  CustomPaint(painter: PhotoOverlayPainter(analysis)),
+                ],
               ),
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
           child: FilledButton.icon(
             onPressed: onRetake,
             icon: const Icon(Icons.camera_alt),
