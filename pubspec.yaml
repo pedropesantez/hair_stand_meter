@@ -1,0 +1,26 @@
+name: hair_strand_meter
+description: Conteo y medición de mechones de cabello a partir de fotos fijas de la tabla.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+  flutter: '>=3.27.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.11.0+2
+  image: ^4.2.0
+
+  # ── Fase 2 (opcional, ver README) ──────────────────────────────
+  # tflite_flutter: ^0.11.0   # segmentación de cabello con TFLite
+  # opencv_dart: ^1.3.0       # si se necesita OpenCV nativo (homografía, etc.)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
